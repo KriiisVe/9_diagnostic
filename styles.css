@@ -1099,8 +1099,55 @@ mjx-math {
 .photo-remove:hover {
   background: #c85c87;
 }
+
 .file-upload-container {
   background: rgb(255 246 246 / 35%);
+}
+
+@media (hover: hover) {
+  .photo-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgb(255 212 230 / 15%);
+  }
+
+  .photo-item:hover .photo-remove {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-remove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: #c85c87;
+  border: none;
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  line-height: 1;
+}
+
+.photo-item.show-remove .photo-remove {
+  opacity: 1;
+  pointer-events: auto;
 }
 .hint {
   color: #645670ab;
